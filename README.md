@@ -9,9 +9,9 @@ poetry install && poetry shell
 
 .env file:
 
-- PROXY_LOGIN
-- PROXY_PASSWORD
-- PROXY_IP
-- PROXY_PORT
-
----
+```
+PROXY_LOGIN
+PROXY_PASSWORD
+PROXY_IP
+PROXY_PORT
+```
