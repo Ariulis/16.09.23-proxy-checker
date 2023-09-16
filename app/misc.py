@@ -1,4 +1,6 @@
 import os
+from time import perf_counter
+from functools import wraps
 
 from loguru import logger
 from dotenv import load_dotenv
@@ -31,5 +33,17 @@ HEADERS = {
     "TE": "trailers",
 }
 PROXY = {
-    'https': f'https://{PROXY_LOGIN}:{PROXY_PASSWORD}@{PROXY_IP}:{PROXY_PORT}'
+    'https': f'http://{PROXY_LOGIN}:{PROXY_PASSWORD}@{PROXY_IP}:{PROXY_PORT}'
 }
+
+
+def timeit():
+    def decorator(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            start = perf_counter()
+            result = f(*args, **kwargs)
+            print(f'Execution time: {round(perf_counter() - start, 2)}')
+            return result
+        return decorated_function
+    return decorator

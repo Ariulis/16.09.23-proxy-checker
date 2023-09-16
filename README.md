@@ -1,7 +1,7 @@
-## 16.09.23-proxy-checker
+# 16.09.23-proxy-checker
 ---
 
-# Proxy validation
+## Proxy validation
 
 ```
 poetry install && poetry shell
@@ -9,9 +9,9 @@ poetry install && poetry shell
 
 .env file:
 
-PROXY_LOGIN=
-PROXY_PASSWORD=
-PROXY_IP=
-PROXY_PORT=
+PROXY_LOGIN
+PROXY_PASSWORD
+PROXY_IP
+PROXY_PORT
 
 ---
